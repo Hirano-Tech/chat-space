@@ -13,7 +13,7 @@ Things you may want to cover:
 
 * Database creation
 
-## userテーブル
+## usersテーブル
 
 | Column | Type |Options|
 |--------|------|-------|
@@ -23,7 +23,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :users_groups
-- has_many :group, through: :users_groups
+- has_many :groups, through: :users_groups
 - has_many :message
 
 ## users_groupsテーブル
@@ -37,7 +37,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## groupテーブル
+## groupsテーブル
 
 |Column| Type |Options|
 |------|------|-------|
@@ -45,10 +45,10 @@ Things you may want to cover:
 
 ### Association
 - has_many :users_groups
-- has_many :user, through: :users_groups
+- has_many :users, through: :users_groups
 - has_many :message
 
-## messageテーブル
+## messagesテーブル
 
 | Column | Type  |Options|
 |--------|-------|-------|
