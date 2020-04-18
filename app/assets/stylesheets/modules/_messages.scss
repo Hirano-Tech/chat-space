@@ -50,6 +50,23 @@
   }
 }
 
+.group {
+  color: #ffffff;
+  font-weight: bold;
+  height: 91px;
+  padding-left: 20px;
+
+  &__name {
+    font-size: 15px;
+    padding-top: 20px;
+  }
+
+  &__message {
+    font-size: 11px;
+    padding-top: 5px;
+  }
+}
+
 .chat-main {
   background-color: #ffffff;
   width: calc(100vw - 300px);
