@@ -4,9 +4,10 @@
       %p.name general
       %p.member Member: 平野 雅一
     .chat-main__group-info--edit
-      .edit
-        =link_to "#" do
-          Edit
+      =link_to "#" do
+        .edit
+          %p Edit
+
   .chat-main__message-list
     .contents
       .contents__name
@@ -20,3 +21,10 @@
         %p.date 2020/04/19(Sun) 17:47:00
       %p.message お疲れさまでした。
   .chat-main__message-form
+    %form
+      .input-form
+        %input{:type => "text", :class => "text-form", :placeholder => "Type a Message"}
+        %label.input-image
+          = icon('far', 'image')
+          %input{:type => "file", :class => "image"}
+        %input{:type => "submit", :class => "send", :value => "Send"}
