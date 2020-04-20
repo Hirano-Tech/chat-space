@@ -1,0 +1,17 @@
+.side_bar
+  .side_bar__user-name
+    .top-items
+      %p.top-items__name
+        平野 雅一
+      %p.top-items__icons
+        = link_to "#", class: "top-items__icons--btn-edit" do
+          = icon('far', 'edit')
+        = link_to "#", class: "top-items__icons--btn-setting" do
+          = icon('fas', 'cog')
+
+  .side_bar__group-list
+    .group
+      %p.group__name
+        general
+      %p.group__message
+        まだメッセージがありません。

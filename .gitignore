@@ -1,10 +1,2 @@
-/.bundle
-
-/log/*
+.DS_Store
 /tmp/*
-!/log/.keep
-!/tmp/.keep
-
-.byebug_history
-
-public/uploads/*

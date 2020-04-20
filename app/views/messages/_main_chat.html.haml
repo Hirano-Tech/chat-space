@@ -1,0 +1,30 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info--name
+      %p.name general
+      %p.member Member: 平野 雅一
+    .chat-main__group-info--edit
+      =link_to "#" do
+        .edit
+          %p Edit
+
+  .chat-main__message-list
+    .contents
+      .contents__name
+        %p.name 平野 雅一
+        %p.date 2020/04/19(Sun) 15:27:00
+      %p.message おはようございます。
+
+    .contents
+      .contents__name
+        %p.name 平野 雅一
+        %p.date 2020/04/19(Sun) 17:47:00
+      %p.message お疲れさまでした。
+  .chat-main__message-form
+    %form
+      .input-form
+        %input{type: "text", class: "text-form", placeholder: "Type a Message"}
+        %label.input-image
+          = icon('far', 'image')
+          %input{type: "file", class: "image"}
+        %input{type: "submit", class: "send", value: "Send"}
