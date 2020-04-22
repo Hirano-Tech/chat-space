@@ -892,3 +892,27 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 89ms (Views: 81.8ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2020-04-22 13:35:58 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (7.8ms)
+  Rendered messages/_main_chat.html.haml (12.8ms)
+  Rendered messages/index.html.haml within layouts/application (34.4ms)
+  Rendered layouts/_notifications.html.haml (2.9ms)
+Completed 200 OK in 181ms (Views: 137.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/groups/1/edit" for ::1 at 2020-04-22 13:36:13 +0900
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.7ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 1 LIMIT 1[0m
+  Rendering groups/edit.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT `users`.id FROM `users` INNER JOIN `group_users` ON `users`.`id` = `group_users`.`user_id` WHERE `group_users`.`group_id` = 1[0m
+  Rendered groups/edit.html.haml within layouts/application (30.6ms)
+  Rendered layouts/_notifications.html.haml (2.5ms)
+Completed 200 OK in 189ms (Views: 77.4ms | ActiveRecord: 18.8ms)
+
+
