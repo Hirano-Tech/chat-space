@@ -4,7 +4,7 @@
       %p.top-items__name
         = current_user.name
       %p.top-items__icons
-        = link_to "#", class: "top-items__icons--btn-edit" do
+        = link_to new_group_path, class: "top-items__icons--btn-edit" do
           = icon('far', 'edit')
         = link_to edit_user_path(current_user), class: "top-items__icons--btn-setting" do
           = icon('fas', 'cog')
