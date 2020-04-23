@@ -78,36 +78,35 @@
   }
 }
 
-.chat-main {
+.wrapper {
   background-color: #ffffff;
-  width: calc(100vw - 300px);
+  width: 100vw;
   height: 100vh;
-  margin-left: 300px;
 
-  &__group-info {
+  .chat-top {
     background-color: #ffffff;
     border-bottom: #eeeeee;
     height: 100px;
     display: flex;
     justify-content: space-between;
 
-    &--name {
+    .chat-info {
       padding-left: 40px;
 
-      .name {
+      &__group {
         color: #333333;
         font-size: 20px;
         padding-top: 35px;
       }
 
-      .member {
+      &__user-name {
         color: #999999;
         font-size: 12px;
         padding-top: 15px;
       }
     }
 
-    &--edit {
+    .chat-edit {
       width: 112px;
       display: flex;
       align-items: center;
