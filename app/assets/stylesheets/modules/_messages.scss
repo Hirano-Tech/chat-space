@@ -159,30 +159,32 @@
       justify-content: space-around;
       align-items: center;
 
-    .input-form {
+    .form {
       position: relative;
-    }
 
-    .text-form {
-      width: calc(100vw - 455px);
-      height: 50px;
-    }
-
-    .input-image {
-      position: absolute;
-        right: 115px;
-        bottom: 10px;
-
-      .image {
-        display: none;
+      &__message {
+        width: calc(100vw - 455px);
+        height: 50px;
       }
-    }
 
-    .send {
-      background-color: #38aef0;
-      color: #ffffff;
-      width: 100px;
-      height: 50px;
+      .form__mask {
+        position: absolute;
+          right: 115px;
+          bottom: 10px;
+
+        &__image {
+          .hidden {
+            display: none;
+          }
+        }
+      }
+
+      &__submit {
+        background-color: #38aef0;
+        color: #ffffff;
+        width: 100px;
+        height: 50px;
+      }
     }
   }
 }
