@@ -18,6 +18,17 @@
   &__group-list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+
+    .group {
+      &__name {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      &__message {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
   }
 }
 
