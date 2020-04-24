@@ -18,6 +18,17 @@
   &__group-list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
+
+    .group {
+      &__name {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      &__message {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -67,36 +78,35 @@
   }
 }
 
-.chat-main {
+.wrapper {
   background-color: #ffffff;
-  width: calc(100vw - 300px);
+  width: 100vw;
   height: 100vh;
-  margin-left: 300px;
 
-  &__group-info {
+  .chat-top {
     background-color: #ffffff;
     border-bottom: #eeeeee;
     height: 100px;
     display: flex;
     justify-content: space-between;
 
-    &--name {
+    .chat-info {
       padding-left: 40px;
 
-      .name {
+      &__group {
         color: #333333;
         font-size: 20px;
         padding-top: 35px;
       }
 
-      .member {
+      &__user-name {
         color: #999999;
         font-size: 12px;
         padding-top: 15px;
       }
     }
 
-    &--edit {
+    .chat-edit {
       width: 112px;
       display: flex;
       align-items: center;
@@ -105,7 +115,7 @@
         text-decoration: none;
       }
 
-      .edit {
+      &__link {
         color: #38aef0;
         font-size: 16px;
         width: 72px;
@@ -159,30 +169,32 @@
       justify-content: space-around;
       align-items: center;
 
-    .input-form {
+    .form {
       position: relative;
-    }
 
-    .text-form {
-      width: calc(100vw - 455px);
-      height: 50px;
-    }
-
-    .input-image {
-      position: absolute;
-        right: 115px;
-        bottom: 10px;
-
-      .image {
-        display: none;
+      &__message {
+        width: calc(100vw - 455px);
+        height: 50px;
       }
-    }
 
-    .send {
-      background-color: #38aef0;
-      color: #ffffff;
-      width: 100px;
-      height: 50px;
+      .form__mask {
+        position: absolute;
+          right: 115px;
+          bottom: 10px;
+
+        &__image {
+          .hidden {
+            display: none;
+          }
+        }
+      }
+
+      &__submit {
+        background-color: #38aef0;
+        color: #ffffff;
+        width: 100px;
+        height: 50px;
+      }
     }
   }
 }
