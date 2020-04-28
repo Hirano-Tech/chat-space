@@ -36,12 +36,10 @@ $(function(){
             ${message.content}
           </p>
         </div>`
-      console.log();
       return html;
     };
   }
 $('#new_message').on('submit', function(e){
-    e.preventDefault()
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
@@ -54,6 +52,13 @@ $('#new_message').on('submit', function(e){
     })
       .done(function(data){
         var html = buildHTML(data);
+        $('.chat-message').append(html);
+        $('form')[0].reset();
+        $('.chat-message').animate({ scrollTop: $('.chat-message')[0].scrollHeight});
+        $('.form__submit').prop('disabled', false);
       })
+      .fail(function() {
+        alert("メッセージ送信に失敗しました。");
+      });
 })
 });
