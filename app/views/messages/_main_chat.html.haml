@@ -13,11 +13,11 @@
         .chat-edit__link
           %p Edit
 
-  .chat-main__message-list
+  .chat-message
     .contents
       = render @messages
 
-  .chat-main__message-form
+  .chat-message-form
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'Type a Message'
