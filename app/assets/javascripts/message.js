@@ -1,12 +1,12 @@
 $(function(){
 
   function buildHTML(message){
-    if ( message.image ) {
+    if (message.content && message.image) {
       var html = 
-        `<div class="contents">
+        `
           <div class="contents__name">
             <div class="contents__name__name">
-              ${message.user_id}
+              ${message.user_name}
             </div>
             <div class="contents__name__date">
               ${message.created_at}
@@ -17,15 +17,12 @@ $(function(){
               ${message.content}
             </p>
           </div>
-          <img src=${message.image} >
-        </div>`
-      return html;
-    } else {
+          <img src=${message.image} >`
+    } else if (message.content) {
       var html =
-        `<div class="contents">
-        <div class="contents__name">
+        `<div class="contents__name">
           <div class="contents__name__name">
-            ${message.user_id}
+            ${message.user_name}
           </div>
           <div class="contents__name__date">
             ${message.created_at}
@@ -34,12 +31,23 @@ $(function(){
         <div class="message">
           <p class="lower-message__content">
             ${message.content}
-          </p>
-        </div>`
-      return html;
+          </p>`
+    } else if (message.image) {
+      var html =
+        `<div class="contents__name">
+        <div class="contents__name__name">
+          ${message.user_name}
+        </div>
+        <div class="contents__name__date">
+          ${message.created_at}
+        </div>
+        <img src=${message.image} >`
     };
+    return html;
   }
 $('#new_message').on('submit', function(e){
+    console.log('success');
+    e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
@@ -52,9 +60,10 @@ $('#new_message').on('submit', function(e){
     })
       .done(function(data){
         var html = buildHTML(data);
-        $('.chat-message').append(html);
+        $('.contents').append(html);
         $('form')[0].reset();
-        $('.chat-message').animate({ scrollTop: $('.chat-message')[0].scrollHeight});
+        $('.chat-message').animate({ scrollTop: $('.chat-message')[0].scrollHeight}, 'fast' );
+        // $('.contents').animate({ scrollTop: $('.message:last').offset().top});
         $('.form__submit').prop('disabled', false);
       })
       .fail(function() {
