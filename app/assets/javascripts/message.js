@@ -63,7 +63,6 @@ $('#new_message').on('submit', function(e){
         $('.contents').append(html);
         $('form')[0].reset();
         $('.chat-message').animate({ scrollTop: $('.chat-message')[0].scrollHeight}, 'fast' );
-        // $('.contents').animate({ scrollTop: $('.message:last').offset().top});
         $('.form__submit').prop('disabled', false);
       })
       .fail(function() {
