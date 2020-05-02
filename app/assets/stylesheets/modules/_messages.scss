@@ -15,20 +15,26 @@
     align-items: center;
   }
 
-  &__group-list {
+  .groups {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    overflow: scroll;
 
     .group {
-      &__name {
+      padding: 20px 0 40px;
+      margin: 0 20px ;
+
+      &__group-name {
         color: #ffffff;
-        text-decoration: none;
+        font-size: 15px;
       }
-      &__message {
+      &__latest-message {
         color: #ffffff;
-        text-decoration: none;
+        font-size: 11px;
       }
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 }
